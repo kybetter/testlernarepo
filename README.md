@@ -1,6 +1,8 @@
 # testlernarepo
 这是一个测试使用 lerna 来进行多包管理的项目。
 
+### 温馨提示：请直接看最后面的正确操作，如果不懂，再回顾全文。
+
 #### 如何像 babel 那样进行多包管理呢？
 babel 项目的 packages 里面存放了 babel 旗下的所有包，比如：babel-core。
 
@@ -40,3 +42,13 @@ testlerna
 这种方式是有一丢丢麻烦，因为 npm 默认会把 @ 开头的包当成私有包来看待，就导致了如果不在 npm 上提交一次公共版本，执行`lerna publish`时就会发布不了，可能`lerna publish`调用的 npm 命令是`npm publish`它没有加`--access=publish`参数。
 
 如果你不想这么麻烦，那么有一个办法就是，不用`scope package`，也就是你的包名不加 @ 前缀，这样你的包就默认是公共的包了，完全可以不用先去提交一次公共版本，才能使用 lerna 来管理你的包，简单多了。
+
+更新，不用像上面那么麻烦了，还得新建一个仓库，你大可以把前面那种方法当成是学习 npm 的 scope package 吧。
+
+正确的方式是这种：
+使用 lerna init 后，packages 里面也有你的包了，这时候我们要先进行第一次发布，直接进入 packages/你的包目录，执行：`npm publish --access=public`，
+发布完以后，下次你就可以在主项目里面使用：`lerna publish`来管理了。
+
+
+
+
