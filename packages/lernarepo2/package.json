@@ -1,0 +1,8 @@
+{
+  "name": "@kybetter/lernarepo2",
+  "version": "1.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/kybetter/lernarepo2.git",
+  "author": "zhaoliang <kybetter@163.com>",
+  "license": "MIT"
+}
